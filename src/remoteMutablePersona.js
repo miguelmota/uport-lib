@@ -173,7 +173,7 @@ class RemoteMutablePersona extends Persona {
    *  Sets the public encryption key of the persona.
    *
    *  @memberof RemoteMutablePersona
-   *  @method       setPublicencryptionKey
+   *  @method       setPublicEncryptionKey
    *  @param        {String}                        pubEncKey           the public encryption key of the persona
    */
   setPublicEncryptionKey (pubEncKey) {
