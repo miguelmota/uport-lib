@@ -177,7 +177,7 @@ npm run gen-readme
 ## Uport
 This class is the main entry point for interaction with uport.
 
-**Kind**: global class  
+**Kind**: global class
 
 * [Uport](#Uport)
     * [.constructor(dappName, opts)](#Uport.constructor) ⇒ <code>Object</code>
@@ -191,8 +191,8 @@ This class is the main entry point for interaction with uport.
 ### Uport.constructor(dappName, opts) ⇒ <code>Object</code>
 Creates a new uport object.
 
-**Kind**: static method of <code>[Uport](#Uport)</code>  
-**Returns**: <code>Object</code> - self  
+**Kind**: static method of <code>[Uport](#Uport)</code>
+**Returns**: <code>Object</code> - self
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -208,8 +208,8 @@ Creates a new uport object.
 ### Uport.getUportProvider(rpcUrl) ⇒ <code>Object</code>
 Get the uport flavored web3 provider. It's implemented using provider engine.
 
-**Kind**: static method of <code>[Uport](#Uport)</code>  
-**Returns**: <code>Object</code> - the uport web3 provider  
+**Kind**: static method of <code>[Uport](#Uport)</code>
+**Returns**: <code>Object</code> - the uport web3 provider
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -220,15 +220,15 @@ Get the uport flavored web3 provider. It's implemented using provider engine.
 ### Uport.getUportProvider() ⇒ <code>Object</code>
 Get the subprovider that handles signing transactions using uport. Use this if you want to customize your provider engine instance.
 
-**Kind**: static method of <code>[Uport](#Uport)</code>  
-**Returns**: <code>Object</code> - the uport subprovider  
+**Kind**: static method of <code>[Uport](#Uport)</code>
+**Returns**: <code>Object</code> - the uport subprovider
 <a name="Uport.setProviders"></a>
 
 ### Uport.setProviders(web3Provider, ipfsProvider)
 A method for setting providers if not done previously. This is useful if you are using a custom provider engine for example.
 Not that the ipfsProvider can also be set in the constructor.
 
-**Kind**: static method of <code>[Uport](#Uport)</code>  
+**Kind**: static method of <code>[Uport](#Uport)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -240,15 +240,15 @@ Not that the ipfsProvider can also be set in the constructor.
 ### Uport.getUserPersona() ⇒ <code>[Promise.&lt;MutablePersona&gt;](#MutablePersona)</code>
 This method returns an instance of MutablePersona of the current uport user.
 
-**Kind**: static method of <code>[Uport](#Uport)</code>  
-**Returns**: <code>[Promise.&lt;MutablePersona&gt;](#MutablePersona)</code> - a MutablePersona instantiated with the address of the connected uport user  
+**Kind**: static method of <code>[Uport](#Uport)</code>
+**Returns**: <code>[Promise.&lt;MutablePersona&gt;](#MutablePersona)</code> - a MutablePersona instantiated with the address of the connected uport user
 
 <a name="Persona"></a>
 
 ## Persona
 Class representing a persona.
 
-**Kind**: global class  
+**Kind**: global class
 
 * [Persona](#Persona)
     * [.constructor(address, ipfsProvider, web3Provider, [registryAddress])](#Persona.constructor) ⇒ <code>Object</code>
@@ -270,8 +270,8 @@ Class representing a persona.
 Class constructor.
  Creates a new persona object. The registryAddress is an optional argument and if not specified will be set to the default consensys testnet uport-registry.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
-**Returns**: <code>Object</code> - self  
+**Kind**: static method of <code>[Persona](#Persona)</code>
+**Returns**: <code>Object</code> - self
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -286,15 +286,15 @@ Class constructor.
 This should be the only function used to get attributes from the uport-registry. This can be overridden in
  a subclass.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
-**Returns**: <code>Promise.&lt;JSON, Error&gt;</code> - A promise that returns all tokens registered to the persona. Encrypted tokens would be included here. Or an Error if rejected.  
+**Kind**: static method of <code>[Persona](#Persona)</code>
+**Returns**: <code>Promise.&lt;JSON, Error&gt;</code> - A promise that returns all tokens registered to the persona. Encrypted tokens would be included here. Or an Error if rejected.
 <a name="Persona.load"></a>
 
 ### Persona.load(claims) ⇒ <code>Promise.&lt;JSON, Error&gt;</code>
 This function always have to be called before doing anything else, with the exception of setProfile. This function loads the profile of the persona from the uport-registry into the persona object.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
-**Returns**: <code>Promise.&lt;JSON, Error&gt;</code> - A promise that returns all tokens registered to the persona. Encrypted tokens would be included here. Or an Error if rejected.  
+**Kind**: static method of <code>[Persona](#Persona)</code>
+**Returns**: <code>Promise.&lt;JSON, Error&gt;</code> - A promise that returns all tokens registered to the persona. Encrypted tokens would be included here. Or an Error if rejected.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -305,34 +305,34 @@ This function always have to be called before doing anything else, with the exce
 ### Persona.getProfile() ⇒ <code>JSON</code>
 This function returns the profile of the persona in JSON format.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
-**Returns**: <code>JSON</code> - profile  
+**Kind**: static method of <code>[Persona](#Persona)</code>
+**Returns**: <code>JSON</code> - profile
 <a name="Persona.getPublicSigningKey"></a>
 
 ### Persona.getPublicSigningKey() ⇒ <code>String</code>
 Returns the public signing key of the persona.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
+**Kind**: static method of <code>[Persona](#Persona)</code>
 <a name="Persona.getPublicEncryptionKey"></a>
 
 ### Persona.getPublicEncryptionKey() ⇒ <code>String</code>
 Returns the public encryption key of the persona, if set.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
+**Kind**: static method of <code>[Persona](#Persona)</code>
 <a name="Persona.getAllClaims"></a>
 
 ### Persona.getAllClaims() ⇒ <code>JSON</code>
 Returns all tokens associated with the persona.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
-**Returns**: <code>JSON</code> - List of tokens  
+**Kind**: static method of <code>[Persona](#Persona)</code>
+**Returns**: <code>JSON</code> - List of tokens
 <a name="Persona.getClaims"></a>
 
 ### Persona.getClaims(attributesName) ⇒ <code>JSON</code>
 Returns all tokens that have the given attribute name.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
-**Returns**: <code>JSON</code> - List of tokens  
+**Kind**: static method of <code>[Persona](#Persona)</code>
+**Returns**: <code>JSON</code> - List of tokens
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -343,8 +343,8 @@ Returns all tokens that have the given attribute name.
 ### Persona.signAttribute(attribute, privSignKey, issuerId) ⇒ <code>Object</code>
 Signs the given attribute to the persona. This method is to be used by third parties who wishes to attest to an attribute of the persona.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
-**Returns**: <code>Object</code> - token  
+**Kind**: static method of <code>[Persona](#Persona)</code>
+**Returns**: <code>Object</code> - token
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -357,8 +357,8 @@ Signs the given attribute to the persona. This method is to be used by third par
 ### Persona.signMultipleAttributes(attribute, privSignKey, issuerId) ⇒ <code>Array</code>
 Same as addAttribute but for a list of attributes.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
-**Returns**: <code>Array</code> - List of tokens  
+**Kind**: static method of <code>[Persona](#Persona)</code>
+**Returns**: <code>Array</code> - List of tokens
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -371,23 +371,23 @@ Same as addAttribute but for a list of attributes.
 ### Persona.isTokenValid(token) ⇒ <code>Boolean</code>
 A static function for checking if a token is valid.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
+**Kind**: static method of <code>[Persona](#Persona)</code>
 
 | Param | Type |
 | --- | --- |
-| token | <code>Object</code> | 
+| token | <code>Object</code> |
 
 <a name="Persona.privateKeyToPublicKey"></a>
 
 ### Persona.privateKeyToPublicKey(privateKey) ⇒ <code>String</code>
 A static function for checking if a token is valid.
 
-**Kind**: static method of <code>[Persona](#Persona)</code>  
-**Returns**: <code>String</code> - publicKey  
+**Kind**: static method of <code>[Persona](#Persona)</code>
+**Returns**: <code>String</code> - publicKey
 
 | Param | Type |
 | --- | --- |
-| privateKey | <code>String</code> | 
+| privateKey | <code>String</code> |
 
 
 <a name="MutablePersona"></a>
@@ -395,8 +395,8 @@ A static function for checking if a token is valid.
 ## MutablePersona ⇐ <code>[Persona](#Persona)</code>
 Class representing a persona that can be modified.
 
-**Kind**: global class  
-**Extends:** <code>[Persona](#Persona)</code>  
+**Kind**: global class
+**Extends:** <code>[Persona](#Persona)</code>
 
 * [MutablePersona](#MutablePersona) ⇐ <code>[Persona](#Persona)</code>
     * [.constructor(address, ipfsProvider, web3Provider, [registryAddress])](#MutablePersona.constructor) ⇒ <code>Object</code>
@@ -408,7 +408,7 @@ Class representing a persona that can be modified.
     * [.replaceAttribute(attribute, privSignKey)](#MutablePersona.replaceAttribute)
     * [.removeAttribute(attribute)](#MutablePersona.removeAttribute)
     * [.setPublicSigningKey(privSignKey)](#MutablePersona.setPublicSigningKey)
-    * [.setPublicencryptionKey(pubEncKey, privSignKey)](#MutablePersona.setPublicencryptionKey)
+    * [.setPublicEncryptionKey(pubEncKey, privSignKey)](#MutablePersona.setPublicEncryptionKey)
 
 <a name="MutablePersona.constructor"></a>
 
@@ -416,8 +416,8 @@ Class representing a persona that can be modified.
 Class constructor.
  Creates a new persona object. The registryAddress is an optional argument and if not specified will be set to the default consensys testnet uport-registry.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
-**Returns**: <code>Object</code> - self  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
+**Returns**: <code>Object</code> - self
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -434,14 +434,14 @@ This should be the only function ever used to write the persona onto the blockch
 
  It stores whatever is in this.tokenRecords.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
-**Returns**: <code>Promise.&lt;String, Error&gt;</code> - A promise that returns the txHash of the transaction updating the registry. Or an Error if rejected.  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
+**Returns**: <code>Promise.&lt;String, Error&gt;</code> - A promise that returns the txHash of the transaction updating the registry. Or an Error if rejected.
 <a name="MutablePersona.addClaim"></a>
 
 ### MutablePersona.addClaim(token)
 Add a signed claim to this persona. This should be used to add tokens signed by third parties.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -452,7 +452,7 @@ Add a signed claim to this persona. This should be used to add tokens signed by 
 ### MutablePersona.addClaims(tokensList)
 Add mulitple signed claims to this persona. This should be used to add tokens signed by third parties.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -463,7 +463,7 @@ Add mulitple signed claims to this persona. This should be used to add tokens si
 ### MutablePersona.removeClaim(tokens)
 Removes a signed claim from a persona.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -474,7 +474,7 @@ Removes a signed claim from a persona.
 ### MutablePersona.addAttribute(attribute, privSignKey)
 Adds a self signed attribute to the persona. Only to be used if you own the pubSignKey of this persona.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -486,7 +486,7 @@ Adds a self signed attribute to the persona. Only to be used if you own the pubS
 ### MutablePersona.replaceAttribute(attribute, privSignKey)
 Removes all tokens having the same attribute name as the given attribute and adds the given attribute.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -498,7 +498,7 @@ Removes all tokens having the same attribute name as the given attribute and add
 ### MutablePersona.removeAttribute(attribute)
 Removes all attributes with the same attribute name as the given attribute.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -509,18 +509,18 @@ Removes all attributes with the same attribute name as the given attribute.
 ### MutablePersona.setPublicSigningKey(privSignKey)
 Sets the public signing key of the persona.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
 | privSignKey | <code>String</code> | the private signing key of the persona |
 
-<a name="MutablePersona.setPublicencryptionKey"></a>
+<a name="MutablePersona.setPublicEncryptionKey"></a>
 
-### MutablePersona.setPublicencryptionKey(pubEncKey, privSignKey)
+### MutablePersona.setPublicEncryptionKey(pubEncKey, privSignKey)
 Sets the public encryption key of the persona.
 
-**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>  
+**Kind**: static method of <code>[MutablePersona](#MutablePersona)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
